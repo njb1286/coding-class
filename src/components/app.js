@@ -1,12 +1,52 @@
 import React, { Component } from 'react';
 
+import MadLibs from './apps/mad-libs/main';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 export default class App extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      apps: [
+        {
+          name: "Mad Libs",
+          path: "mad-libs",
+          component: <MadLibs />
+        }
+      ]
+    }
+  }
+
   render() {
     return (
-      <div className='app'>
-        <h1>DevCamp React Starter</h1>
-        <h2>React Redux Router</h2>
-      </div>
+      <Router>
+
+        <Switch>
+
+          {
+            this.state.apps.map(app => (
+              <Route key={this.state.apps.indexOf(app)} path={`/${app.path}`} render={() => app.component} />
+            ))
+          }
+
+          <Route exact path="/" render={() => (
+            <div className='homepage'>
+              {this.state.apps.map(app => (
+                <Link key={this.state.apps.indexOf(app)} to={app.path}>{app.name}</Link>
+              ))}
+            </div>
+          )} />
+
+        </Switch>
+
+      </Router>
     );
   }
 }
