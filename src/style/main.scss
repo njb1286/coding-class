@@ -11,6 +11,6 @@
     margin: 100px;
 }
 
-.mad-libs {
+body:has(.mad-libs) {
     @import "./pages/mad-libs/main.scss";
 }
