@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Input from './input';
+import { removeCapital } from './helpers';
 
 export default class Card extends Component {
     constructor(props) {
@@ -8,7 +9,21 @@ export default class Card extends Component {
     
         this.state = {
             color: "",
-            pluralNoun: ""
+            pluralNoun: "",
+            adjectiveOne: "",
+            celebrityOne: "",
+            nounOne: "",
+            adjectiveTwo: "",
+            numberOne: "",
+            numberTwo: "",
+            nounTwo: "",
+            adjectiveThree: "",
+            celebrityTwo: "",
+            celebrityThree: "",
+            adjectiveFour: "",
+            nounThree: "",
+            celebrityFour: "",
+            adjectiveFive: ""
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -16,7 +31,8 @@ export default class Card extends Component {
     }
 
     handleInputChange(event) {
-        this.setState({ [event.target.name]: event.target.value })
+        this.setState({ [event.target.name]: event.target.value });
+        console.log(this.state);
     }
 
     handleGetState(key) {
@@ -24,14 +40,29 @@ export default class Card extends Component {
     }
 
     render() {
+
+        const inputData = Object.keys(this.state).map(item => {
+            return {
+                title: removeCapital(item),
+                name: item
+            }
+        })
+
         return (
             <div className='card'>
                 <h1>{this.state.color}</h1>
-                {/* <Input label="Color" state="color" handleInputChange={this.handleInputChange} />
-                <Input label="Plural Noun" state="pluralNoun" handleInputChange={this.handleInputChange} /> */}
-                
-                <Input label="Color" state="color" handleGetState={this.handleGetState} handleInputChange={this.handleInputChange} />
-                <Input label="Plural Noun" state="pluralNoun" handleGetState={this.handleGetState} handleInputChange={this.handleInputChange} />
+
+                {
+                    inputData.map(item => (
+                        <Input
+                            key={item.name} 
+                            title={item.title} 
+                            state={item.name} 
+                            handleGetState={this.handleGetState} 
+                            handleInputChange={this.handleInputChange} 
+                        />
+                    ))
+                }
             </div>
         )
     }
