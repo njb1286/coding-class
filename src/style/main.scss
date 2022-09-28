@@ -14,3 +14,7 @@
 body:has(.mad-libs) {
     @import "./pages/mad-libs/main.scss";
 }
+
+body:has(.typescript) {
+    @import "./pages/typescript/main.scss";
+}

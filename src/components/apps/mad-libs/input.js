@@ -3,7 +3,7 @@ import React from 'react';
 export default props => {
     return (
         <div>
-           <input type="text" onInput={e => props.handleInputChange(props.state, e.target.value)} />
+           <input type="text" value={props.handleGetState(props.state)} name={props.state} onChange={e => props.handleInputChange(e)} />
            <label>{props.label}</label>
         </div>
     )

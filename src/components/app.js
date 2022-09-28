@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import MadLibs from './apps/mad-libs/main';
+// import TypeScript from './apps/typescript/main.ts';
 
 import {
   BrowserRouter as Router,
@@ -19,7 +20,13 @@ export default class App extends Component {
           name: "Mad Libs",
           path: "mad-libs",
           component: <MadLibs />
-        }
+        },
+
+        // {
+        //   name: "Type Script",
+        //   path: "typescript",
+        //   component: TypeScript()
+        // }
       ]
     }
   }
