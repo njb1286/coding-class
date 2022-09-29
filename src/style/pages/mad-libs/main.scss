@@ -8,4 +8,14 @@
     box-shadow: 0 4px 30px 0 rgba(0, 0, 0, .06);
     border-radius: 7px;
     background-color: white;
+
+    .card__inputs {
+        .generate-btn::-ms-value {
+            content: "Generate Mad Lib";
+        }
+
+        .clear-btn::-ms-value {
+            content: "Clear Form";
+        }
+    }
 }
