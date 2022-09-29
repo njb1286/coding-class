@@ -28,6 +28,10 @@ export default class Card extends Component {
             contentVisible: false
         }
 
+        this.blackList = [
+            "contentVisible"
+        ]
+
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleGetState = this.handleGetState.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,19 +47,22 @@ export default class Card extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log("Trying to submit");
+        
+        if (this.state.contentVisible) {
+            Object.keys(this.state).filter(item => !this.blackList.includes(item)).forEach(item => this.setState({
+                [item]: ""
+            }))
+        }
+
         this.setState({
             contentVisible: !this.state.contentVisible // I should have thought of this a long time ago! Being able to set the value to not the current value! (Swapping)
         })
+
     }
 
     render() {
 
-        const blackList = [
-            "contentVisible"
-        ]
-
-        const inputData = Object.keys(this.state).filter(item => !blackList.includes(item)).map(item => {
+        const inputData = Object.keys(this.state).filter(item => !this.blackList.includes(item)).map(item => {
             return {
                 title: parseCamelCase(item),
                 name: item
