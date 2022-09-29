@@ -1,7 +1,10 @@
+// export default () => {
+//     function getDate(): number {
+//         return 5;
+//     }
+// }
+
 export default () => {
-    function getDate(): number {
-        return 5;
-    }
-
-
+    let test: string = "Test";
+    console.log(test);
 }
