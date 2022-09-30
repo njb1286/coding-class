@@ -72,20 +72,28 @@ export default class Card extends Component {
         return (
             <div className='card'>
                 <form onSubmit={this.handleSubmit} className="card__inputs">
-                    {
-                        inputData.map((item, index) => (
-                            <Input
-                                key={index}
-                                title={item.title} 
-                                state={item.name} 
-                                handleGetState={this.handleGetState} 
-                                handleInputChange={this.handleInputChange} 
-                                index={index}
-                            />
-                        ))
-                    }
-                    {/* <button type='subit'>{!this.state.contentVisible ? "Generate Mad lib" : "Clear Form"}</button> */}
-                    <input type="submit" value={!this.state.contentVisible ? "Generate Mad Lib" : "Clear Form"} className={!this.state.contentVisible ? "generate-btn" : "clear-btn"} />
+                    <div className="user-inputs">
+                        <div className="inputs-wrapper">
+                            {
+                                inputData.map((item, index) => (
+                                    <Input
+                                        key={index}
+                                        title={item.title} 
+                                        state={item.name} 
+                                        handleGetState={this.handleGetState} 
+                                        handleInputChange={this.handleInputChange} 
+                                        index={index}
+                                    />
+                                ))
+                            }
+                        </div>
+
+
+                        <div className="btn-wrapper">
+                            <input type="submit" value={!this.state.contentVisible ? "Generate Mad Lib" : "Clear Form"} className={!this.state.contentVisible ? "generate-btn" : "clear-btn"} />
+                        </div>
+                    </div>
+
                     {
                         this.state.contentVisible ? <Content data={this.state} /> : null
                     }

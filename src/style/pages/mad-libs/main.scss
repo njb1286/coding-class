@@ -9,13 +9,34 @@
     border-radius: 7px;
     background-color: white;
 
-    .card__inputs {
-        .generate-btn::-ms-value {
-            content: "Generate Mad Lib";
+.card__inputs {
+    height: 100%;
+
+    .user-inputs {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+
+        .btn-wrapper {
+            display: grid;
         }
 
-        .clear-btn::-ms-value {
-            content: "Clear Form";
+        .inputs-wrapper {
+            background-color: lightblue;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 100%;
+
+                .input {
+                    &__title {
+
+                    }
+
+                    &__number { // The & represents .input, and then I add __number to get the full class
+
+                    }
+                }
+            }
         }
     }
 }
