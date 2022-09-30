@@ -73,13 +73,14 @@ export default class Card extends Component {
             <div className='card'>
                 <form onSubmit={this.handleSubmit} className="card__inputs">
                     {
-                        inputData.map(item => (
+                        inputData.map((item, index) => (
                             <Input
-                                key={item.name} 
+                                key={index}
                                 title={item.title} 
                                 state={item.name} 
                                 handleGetState={this.handleGetState} 
                                 handleInputChange={this.handleInputChange} 
+                                index={index}
                             />
                         ))
                     }

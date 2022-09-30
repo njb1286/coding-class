@@ -2,7 +2,21 @@ import React from 'react';
 
 export default function(props) {
 
-    const data = props.data;
+  const keys = Object.keys(props.data);
+    const data_old = keys.map((item, index) => {
+      return {
+        [item]: (
+          <span>
+            <span>{index + 1}</span>
+            <span>{props.data[item]}</span>
+          </span>
+        )
+      }
+    });
+
+    let data = {};
+    for (let i in keys) data[keys[i]] = data_old[i][keys[i]];
+    console.log(data);
 
     return (
         <p>
