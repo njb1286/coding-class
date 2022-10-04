@@ -1,42 +1,97 @@
-.mad-libs {
-    background: rgba(207, 207, 207, 0.06);
-}
+& {
+    margin: 0;
 
-.card {
-    height: 736px;
-    width: 1240px;
-    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, .06);
-    border-radius: 7px;
-    background-color: white;
+    .mad-libs {
+        background: rgba(207, 207, 207, 0.06);
+        height: 99vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+        
+        .header {
+            margin-bottom: 2vh;
+            margin-top: 2vh;
 
-.card__inputs {
-    height: 100%;
+            &__skew {
+                transform: skewY(-8deg) translateY(-25em);
+                background-color: #444444;
+                height: 50em;
+                width: 100vw;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -10;
+                -webkit-backface-visibility: hidden;
+                border-bottom: 20px solid #00CB79;
+            }
 
-    .user-inputs {
-        height: 100%;
-        display: grid;
-        grid-template-rows: 1fr 50px;
+            text-align: center;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
 
-        .btn-wrapper {
-            display: grid;
+            h1 {
+                font-size: 36px;
+                line-height: 44px;
+                font-weight: 500;
+            }
+
+            p {
+                color: rgba(255, 255, 255, .7);
+                font-size: 15px;
+                font-weight: 300;
+                line-height: 18px;
+                width: 403px;
+            }
         }
-
-        .inputs-wrapper {
-            background-color: lightblue;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+        
+        .card {
+            height: 80vh;
+            width: 70vw;
+            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, .06);
+            border-radius: 7px;
+            background-color: white;
+        
+        .card__inputs {
             height: 100%;
-
-                .input {
-                    &__title {
-
-                    }
-
-                    &__number { // The & represents .input, and then I add __number to get the full class
-
+        
+            .user-inputs {
+                height: 100%;
+                display: grid;
+                grid-template-rows: 1fr 50px;
+        
+                .btn-wrapper {
+                    display: grid;
+                }
+        
+                .inputs-wrapper {
+                    background-color: lightblue;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    height: 100%;
+                    justify-items: center;
+                    align-items: center;
+        
+                        .input {
+                            display: grid;
+                            grid-template-columns: 26px 1fr;
+        
+                            &__title {
+                                grid-column: 2/3;
+                            }
+        
+                            input {
+                                grid-column: 2/3;
+                            }
+        
+                            &__number { // The & represents .input, and then I add __number to get the full class
+                                grid-column: 1/2;
+                            }
+                        }
                     }
                 }
             }
         }
-    }
+    }    
 }

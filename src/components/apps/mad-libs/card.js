@@ -94,9 +94,13 @@ export default class Card extends Component {
                         </div>
                     </div>
 
-                    {
+                    <Content data={this.state} style={{
+                        opacity: this.state.contentVisible ? "100%" : "0%"
+                    }} />
+
+                    {/* {
                         this.state.contentVisible ? <Content data={this.state} /> : null
-                    }
+                    } */}
                 </form>
 
             </div>
