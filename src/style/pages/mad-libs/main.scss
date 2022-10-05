@@ -54,11 +54,6 @@
             border-radius: 7px;
             background-color: white;
 
-            // .btn-wrapper {
-            //     display: flex;
-            //     justify-content: center;
-            // }
-
             &__generate {
                 background-color: #00CB79;
             }
@@ -80,6 +75,38 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
                 outline: none;
                 justify-self: center;
+                z-index: 1;
+            }
+
+            &__content {
+                width: 100%;
+                height: 297px;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 84px;
+
+                &__text {
+                    background-color: #F2F2F2;
+                    width: 85%;
+                    font-family: 'Montserrat';
+                    font-size: 25px;
+                    font-weight: 300;
+                    margin: 0;
+                    transform: translateY(-25px);
+                    padding: 50px;
+                    height: 60%;
+                    line-height: 40px;
+
+                    .madlib-text {
+                        .index {
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+                }
             }
         
         .card__inputs {
@@ -139,16 +166,20 @@
         
                             &__number { // The & represents .input, and then I add __number to get the full class
                                 grid-column: 1/2;
-                                background-color: #00CB79;
+                                background-color: #b3b3b3;
                                 color: white;
                                 font-size: 30px;
-                                width: 1em;
-                                height: 1em;
+                                width: .8em;
+                                height: .8em;
                                 padding: 8px;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
                                 border-radius: 50%;
+
+                                &:is(.active) {
+                                    background-color: #00CB79;
+                                }
                             }
                         }
                     }
