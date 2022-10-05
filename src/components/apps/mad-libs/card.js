@@ -90,13 +90,18 @@ export default class Card extends Component {
 
 
                         <div className="btn-wrapper">
-                            <input type="submit" value={!this.state.contentVisible ? "Generate Mad Lib" : "Clear Form"} className={!this.state.contentVisible ? "generate-btn" : "clear-btn"} />
+                            <input 
+                                type="submit" 
+                                value={!this.state.contentVisible ? "Generate Mad Lib" : "Clear Form"} 
+                                className={`card__${!this.state.contentVisible ? 'generate' : 'clear'} card__btn`} 
+                            />
                         </div>
+                        
+                        <Content data={this.state} style={{
+                            opacity: this.state.contentVisible ? "100%" : "0%"
+                        }} />
                     </div>
 
-                    <Content data={this.state} style={{
-                        opacity: this.state.contentVisible ? "100%" : "0%"
-                    }} />
 
                     {/* {
                         this.state.contentVisible ? <Content data={this.state} /> : null
