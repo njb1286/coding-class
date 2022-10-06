@@ -84,11 +84,11 @@
                 display: flex;
                 justify-content: center;
                 margin-bottom: 84px;
+                font-family: 'Montserrat';
 
-                &__text {
+                &__data {
                     background-color: #F2F2F2;
                     width: 85%;
-                    font-family: 'Montserrat';
                     font-size: 25px;
                     font-weight: 300;
                     margin: 0;
@@ -97,14 +97,26 @@
                     height: 60%;
                     line-height: 40px;
 
+                    b {
+                        display: inline-block;
+                    }
+
                     .madlib-text {
-                        .index {
-                            background-color: black;
-                            color: white;
-                            border-radius: 50%;
-                            width: 15px;
-                            height: 15px;
-                        }
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    &__index {
+                        background-color: black;
+                        color: white;
+                        border-radius: 50%;
+                        width: 25px;
+                        height: 25px;
+                        font-size: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 10px;
                     }
                 }
             }
