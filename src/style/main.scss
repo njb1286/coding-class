@@ -18,3 +18,7 @@ body:has(.mad-libs) {
 body:has(.typescript) {
     @import "./pages/typescript/main.scss";
 }
+
+body:has(.props-state-this) {
+    @import "./pages/props-state-this/main.scss";
+}
