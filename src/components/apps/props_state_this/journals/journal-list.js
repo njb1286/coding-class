@@ -19,10 +19,31 @@ export default class JournalList extends Component {
             journalData: rawJournalData,
             isOpen: true
         }
+
+        this.clearEntries = this.clearEntries.bind(this);
+        this.showAllEntries = this.showAllEntries.bind(this);
+        this.toggleStatus = this.toggleStatus.bind(this);
+    }
+
+    clearEntries() {
+        this.setState({
+            journalData: [],
+            isOpen: false
+        })
+    }
+
+    showAllEntries() {
+        this.setState({
+            journalData: rawJournalData,
+            isOpen: true
+        })
+    }
+
+    toggleStatus() {
+        this.state.isOpen ? this.clearEntries() : this.showAllEntries();
     }
 
     render() {
-
         const journalEntries = this.state.journalData.map(e => (
             <div key={e.title}>
                 <JournalEntry title={e.title} content={e.content} />
@@ -33,6 +54,10 @@ export default class JournalList extends Component {
             <div>
                 <h2>{this.props.heading}</h2>
                 {journalEntries}
+
+                <input type="button" onClick={this.clearEntries} value="Clear journal entries" />
+                <input type="button" onClick={this.showAllEntries} value="Show all entries" />
+                <input type="button" onClick={this.toggleStatus} value="Toggle Entries" />
             </div>
         )
     }
