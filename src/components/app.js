@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import MadLibs from './apps/mad-libs/main';
 import PropsStateThis from './apps/props_state_this/main';
+import BirthdayCountdown from './apps/birthday-countdown/main';
 // import TypeScript from './apps/typescript/main.ts';
 
 import {
@@ -32,6 +33,12 @@ export default class App extends Component {
           name: "Props State This",
           path: 'props-state-this',
           component: <PropsStateThis />
+        },
+
+        {
+          name: "Birthday Countdown",
+          path: 'birthday-countdown',
+          component: <BirthdayCountdown />
         }
       ]
     }

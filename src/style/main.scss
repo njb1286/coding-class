@@ -22,3 +22,7 @@ body:has(.typescript) {
 body:has(.props-state-this) {
     @import "./pages/props-state-this/main.scss";
 }
+
+body:has(.birthday-countdown) {
+    @import "./pages/birthday-countdown/main.scss";
+}
