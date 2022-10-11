@@ -1,0 +1,25 @@
+.button {
+    grid-row: 3/4;
+    grid-column: 5/10;
+    justify-self: center;
+
+    background-color: $color-blue-one;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 75px;
+    width: 400px;
+
+    transform: skewX(-20deg);
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+
+    box-shadow: 0 0 30px 2px rgba(0, 0, 0, .4);
+    
+    &__title {
+        transform: skewX(20deg);
+        font-family: 'Montserrat';
+    }
+}
