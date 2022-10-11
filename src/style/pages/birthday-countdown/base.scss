@@ -8,4 +8,17 @@ $color-blue-two: #518BDE;
 
     grid-template-rows: repeat(4, minmax(200px, 1fr));
     grid-template-columns: repeat(11, minmax(150px, 1fr));
+
+    &__title {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        
+        justify-self: center;
+        font-size: 24px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        line-height: 22px;
+        padding: 55px 75px;
+    }
 }
