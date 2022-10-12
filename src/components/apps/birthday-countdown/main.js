@@ -4,6 +4,22 @@ import Button from './button';
 import Clock from './clock';
 
 export default class BirthdayCountdown extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            active: false
+        }
+
+        this.callback = this.callback.bind(this);
+    }
+
+    callback() {
+        this.setState({
+            active: true
+        })
+    }
+
     render() {
         return (
             <div className='birthday-countdown'>
@@ -19,8 +35,12 @@ export default class BirthdayCountdown extends Component {
                     <div className="grid__skew-light-three-box"></div>
 
                     <Picker />
-                    <Button title="Generate Countdown" />
-                    <Clock />
+                    {
+                        this.state.active ? [
+                            <Clock />,
+                            
+                        ] : <Button title="Generate Countdown" callback={this.callback} />
+                    }
                 </div>
             </div>
         )
