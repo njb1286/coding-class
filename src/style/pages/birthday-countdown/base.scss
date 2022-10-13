@@ -1,7 +1,11 @@
 $color-blue-one: #5496E6;
 $color-blue-two: #518BDE;
 $color-gray-one: #444;
+$color-gray-two: #e6e6e6;
 $color-yellow-one: #F7D754;
+
+$font-roboto: "Roboto Condensed" sans-serif;
+$font-mont: "Montserrat" sans-serif;
 
 .grid {
     display: grid;
@@ -22,5 +26,17 @@ $color-yellow-one: #F7D754;
         font-weight: 300;
         line-height: 22px;
         padding: 55px 75px;
+    }
+
+    &__remaining {
+        grid-row: 4/-1;
+        grid-column: 1/-1;
+        text-align: center;
+        margin-top: 33px;
+
+        color: $color-gray-one;
+        font-family: $font-roboto;
+        font-size: 22px;
+        font-weight: 300;
     }
 }

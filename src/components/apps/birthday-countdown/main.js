@@ -3,6 +3,7 @@ import Picker from './picker';
 import Button from './button';
 import Clock from './clock';
 import ChangeDate from './change-date';
+import LargeText from './large-text';
 
 export default class BirthdayCountdown extends Component {
     constructor(props) {
@@ -35,13 +36,17 @@ export default class BirthdayCountdown extends Component {
                     <div className="grid__skew-light-two"></div>
                     <div className="grid__skew-light-three-box"></div>
 
-                    <Picker />
                     {
                         this.state.active ? [
                             <Clock />,
-                            <ChangeDate title="Change Date" callback={this.callback} />
+                            <ChangeDate title="Change Date" callback={this.callback} />,
+                            <LargeText text="04/03" />,
+                            <label className='grid__remaining'>Remaining until your 21st birthday</label>
                             
-                        ] : <Button title="Generate Countdown" callback={this.callback} />
+                        ] : [
+                            <Button title="Generate Countdown" callback={this.callback} />,
+                            <Picker />
+                        ]
                     }
                 </div>
             </div>
