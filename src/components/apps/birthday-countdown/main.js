@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Picker from './picker';
 import Button from './button';
 import Clock from './clock';
+import ChangeDate from './change-date';
 
 export default class BirthdayCountdown extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ export default class BirthdayCountdown extends Component {
 
     callback() {
         this.setState({
-            active: true
+            active: !this.state.active
         })
     }
 
@@ -38,6 +39,7 @@ export default class BirthdayCountdown extends Component {
                     {
                         this.state.active ? [
                             <Clock />,
+                            <ChangeDate title="Change Date" callback={this.callback} />
                             
                         ] : <Button title="Generate Countdown" callback={this.callback} />
                     }

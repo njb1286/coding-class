@@ -1,0 +1,24 @@
+.change-date {
+    grid-row: 2/3;
+    grid-column: 4/5;
+
+    font-size: 24px;
+    line-height: 19px;
+    text-align: center;
+    color: white;
+    align-self: start;
+    justify-self: start;
+    font-family: "Roboto Condensed";
+    font-weight: 100;
+    cursor: pointer;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    transform: rotate(-70deg);
+
+    svg {
+        margin-right: 20px;
+    }
+}
