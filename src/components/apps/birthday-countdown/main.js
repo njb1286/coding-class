@@ -40,11 +40,26 @@ export default class BirthdayCountdown extends Component {
             active: true
         })
 
+        let bday = this.state.startDate;
+        let today = new Date();
+        let currentMonth = today.getMonth();
+        let birthMonth = bday.getMonth();
+
+        if (birthMonth > currentMonth) bday.setFullYear(today.getFullYear());
+        else if (birthMonth < currentMonth) bday.setFullYear(today.getFullYear() + 1);
+        else if (birthMonth === currentMonth) {
+            let currentDay = today.getDate();
+            let birthDay = bday.getDate();
+
+            if (birthDay > currentDay) bday.setFullYear(today.getFullYear());
+            else if (birthDay <= currentDay) bday.setFullYear(today.getFullYear() + 1);
+        }
+
         // let countdownDate = new Date("Oct 25, 2022 15:37:25").getTime();
         let countdownDate = this.state.startDate.getTime();
 
         this.timer = setInterval(() => {
-            let now = new Date().getTime();
+            let now = today.getTime();
 
             let distance = countdownDate - now;
 
