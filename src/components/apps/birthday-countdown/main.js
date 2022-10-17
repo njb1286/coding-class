@@ -13,16 +13,25 @@ export default class BirthdayCountdown extends Component {
     
         this.state = {
             active: false,
-            startDate: new Date()
+            startDate: new Date(),
+            timeRemaining: {
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0
+            }
         }
+
+        this.timer;
 
         this.handleGenerate = this.handleGenerate.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangeDate = this.handleChangeDate.bind(this);
     }
 
-    handleChange(date) {
+    handleChange(startDate) {
         this.setState({
-            startDate: date
+            startDate
         })
     }
 
@@ -34,7 +43,7 @@ export default class BirthdayCountdown extends Component {
         // let countdownDate = new Date("Oct 25, 2022 15:37:25").getTime();
         let countdownDate = this.state.startDate.getTime();
 
-        const x = setInterval(() => {
+        this.timer = setInterval(() => {
             let now = new Date().getTime();
 
             let distance = countdownDate - now;
@@ -45,10 +54,23 @@ export default class BirthdayCountdown extends Component {
             let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             const time = `${days} d ${hours} h ${minutes} m ${seconds} s`;
-            console.log(time);
-
-            // if (distance < 0) clearInterval(x);
+            
+            this.setState({
+                timeRemaining: {
+                    days,
+                    hours,
+                    minutes,
+                    seconds
+                }
+            })
+            
+            if (distance < 0) clearInterval(this.timer);
         }, 1000)
+    }
+
+    handleChangeDate() {
+        this.setState({ active: false });
+        clearInterval(this.timer);
     }
 
     render() {
@@ -66,14 +88,14 @@ export default class BirthdayCountdown extends Component {
 
                     {
                         this.state.active ? [
-                            <Clock />,
-                            <ChangeDate title="Change Date" callback={() => this.setState({ active: false })} />,
-                            <LargeText text="04/03" />,
+                            <Clock key="clock" timeRemaining={this.state.timeRemaining} />,
+                            <ChangeDate key="change-date" title="Change Date" callback={this.handleChangeDate} />,
+                            <LargeText  key="large-text" text="04/03" />,
                         <label className='grid__remaining'>Remaining until your 21st birthday</label>
                             
                         ] : [
-                            <Button title="Generate Countdown" callback={this.handleGenerate} />,
-                            <Picker callback={date => this.handleChange(date)} />
+                            <Button key="btn" title="Generate Countdown" callback={this.handleGenerate} />,
+                            <Picker key="picker" startDate={this.state.startDate} callback={date => this.handleChange(date)} />
                         ]
                     }
                 </div>
