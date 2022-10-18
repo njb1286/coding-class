@@ -19,7 +19,8 @@ export default class BirthdayCountdown extends Component {
                 hours: 0,
                 minutes: 0,
                 seconds: 0
-            }
+            },
+            age: 0
         }
 
         this.timer;
@@ -36,14 +37,19 @@ export default class BirthdayCountdown extends Component {
     }
 
     handleGenerate() {
-        this.setState({
-            active: true
-        })
-
         let bday = this.state.startDate;
         let today = new Date();
         let currentMonth = today.getMonth();
         let birthMonth = bday.getMonth();
+
+        let timeBetween = today.getTime() - bday.getTime();
+        let daysOld = Math.floor(timeBetween / (1000 * 60 * 60 * 24));
+        let age = Number((daysOld / 365).toFixed(0));
+
+        this.setState({ 
+            age, 
+            active: true
+        });
 
         if (birthMonth > currentMonth) bday.setFullYear(today.getFullYear());
         else if (birthMonth < currentMonth) bday.setFullYear(today.getFullYear() + 1);
@@ -106,7 +112,7 @@ export default class BirthdayCountdown extends Component {
                             <Clock key="clock" timeRemaining={this.state.timeRemaining} />,
                             <ChangeDate key="change-date" title="Change Date" callback={this.handleChangeDate} />,
                             <LargeText  key="large-text" text="04/03" />,
-                        <label className='grid__remaining'>Remaining until your 21st birthday</label>
+                        <label className='grid__remaining'>Time remaining until you turn {this.state.age}</label>
                             
                         ] : [
                             <Button key="btn" title="Generate Countdown" callback={this.handleGenerate} />,
