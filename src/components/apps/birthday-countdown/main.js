@@ -28,6 +28,14 @@ export default class BirthdayCountdown extends Component {
         this.handleGenerate = this.handleGenerate.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
+        this.getBirthDate = this.getBirthDate.bind(this);
+    }
+
+    getBirthDate(date = new Date()) {
+        let month = date.getMonth() + 1;  
+        let day = date.getDate();  
+        if (month < 10) month = "0" + month;
+        return `${month}/${day}`
     }
 
     handleChange(startDate) {
@@ -41,10 +49,9 @@ export default class BirthdayCountdown extends Component {
         let today = new Date();
         let currentMonth = today.getMonth();
         let birthMonth = bday.getMonth();
-
         let timeBetween = today.getTime() - bday.getTime();
         let daysOld = Math.floor(timeBetween / (1000 * 60 * 60 * 24));
-        let age = Number((daysOld / 365).toFixed(0));
+        let age = Number((daysOld / 365).toFixed(0)) + 1;
 
         this.setState({ 
             age, 
@@ -65,7 +72,7 @@ export default class BirthdayCountdown extends Component {
         let countdownDate = this.state.startDate.getTime();
 
         this.timer = setInterval(() => {
-            let now = today.getTime();
+            let now = moment().toDate().getTime();
 
             let distance = countdownDate - now;
 
@@ -111,8 +118,8 @@ export default class BirthdayCountdown extends Component {
                         this.state.active ? [
                             <Clock key="clock" timeRemaining={this.state.timeRemaining} />,
                             <ChangeDate key="change-date" title="Change Date" callback={this.handleChangeDate} />,
-                            <LargeText  key="large-text" text="04/03" />,
-                        <label className='grid__remaining'>Time remaining until you turn {this.state.age}</label>
+                            <LargeText  key="large-text" text={this.getBirthDate(this.state.startDate)} />,
+                            <label className='grid__remaining' key="time-remaining">Time remaining until you turn {this.state.age}</label>
                             
                         ] : [
                             <Button key="btn" title="Generate Countdown" callback={this.handleGenerate} />,
