@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import MadLibs from './apps/mad-libs/main';
 import PropsStateThis from './apps/props_state_this/main';
 import BirthdayCountdown from './apps/birthday-countdown/main';
+import ComponentLifecycle from './apps/component-lifecycle/main';
 // import TypeScript from './apps/typescript/main.ts';
 
 import {
@@ -39,6 +40,12 @@ export default class App extends Component {
           name: "Birthday Countdown",
           path: 'birthday-countdown',
           component: <BirthdayCountdown />
+        },
+
+        {
+          name: "Component Lifecycle Deep dive",
+          path: "component-deepdive",
+          component: <ComponentLifecycle />
         }
       ]
     }
