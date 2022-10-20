@@ -4,6 +4,7 @@ import MadLibs from './apps/mad-libs/main';
 import PropsStateThis from './apps/props_state_this/main';
 import BirthdayCountdown from './apps/birthday-countdown/main';
 import ComponentLifecycle from './apps/component-lifecycle/main';
+import Scheduling from './apps/scheduling/main';
 // import TypeScript from './apps/typescript/main.ts';
 
 import {
@@ -46,6 +47,12 @@ export default class App extends Component {
           name: "Component Lifecycle Deep dive",
           path: "component-deepdive",
           component: <ComponentLifecycle />
+        },
+
+        {
+          name: "Scheduling",
+          path: "scheduling",
+          component: <Scheduling />
         }
       ]
     }

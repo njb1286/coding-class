@@ -26,3 +26,7 @@ body:has(.props-state-this) {
 body:has(.birthday-countdown) {
     @import "./pages/birthday-countdown/main.scss";
 }
+
+body:has(.scheduling) {
+    @import "./pages/scheduling/main.scss";
+}
