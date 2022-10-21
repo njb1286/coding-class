@@ -1,21 +1,37 @@
-.scheduling {
-    display: grid;
-    // grid-template-columns: [library-s] 1fr 1fr [library-e] [schedule-s] 1fr [schedule-e];
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+@import "./variables.scss";
+@import "./library.scss";
+@import "./library-course.scss";
+
+.app-wrapper {
+
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
 
-    .library {
-        // grid-column: library-s/library-e;
-        grid-column: 1/2;
-    }
-
-    .schedule {
-        // grid-column: schedule-s/schedule-e;
-        grid-column: 3/4;
+    .scheduling {
+        display: grid;
+        // grid-template-columns: [library-s] 1fr 1fr [library-e] [schedule-s] 1fr [schedule-e];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        position: relative;
+        height: 100%;
+        
+        .schedule {
+            // grid-column: schedule-s/schedule-e;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            grid-column: 3;
+            grid-row: 1/2
+        };
+    
+        .gradient {
+            height: calc(100% - 80px);
+            width: 100%;
+            background: linear-gradient(120deg, $color-purple 0%, $color-light-blue 100%);
+            z-index: -10;
+        }
     }
 }

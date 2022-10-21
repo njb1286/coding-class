@@ -1,0 +1,23 @@
+.library-courses-wrapper {
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    .library-courses {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-rows: 1fr 1fr;
+        margin-top: 80px;
+    
+        
+        .library-course {
+            &__title {
+                grid-row: 1/2;
+            }
+        
+            &__description {
+                grid-row: 2/3;
+            }
+        }
+    }
+
+}
