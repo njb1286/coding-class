@@ -3,14 +3,38 @@
     grid-row: 1/2;
 
     .library-courses {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-direction: column;
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
         // grid-template-rows: 1fr 1fr;
         margin-top: 80px;
-    
+        
         
         .library-course {
-            &__title {
+            background-color: cornflowerblue;
+            margin-bottom: 30px;
+            min-height: 200px;
+
+            &__header {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &__arrow-action {
+                display: flex;
+            }
+
+            &__title-check {
+                grid-row: 1/2;
+                display: flex;
+            }
+
+            &__arrow {
+                grid-row: 1/2;
+            }
+
+            &__action {
                 grid-row: 1/2;
             }
         
