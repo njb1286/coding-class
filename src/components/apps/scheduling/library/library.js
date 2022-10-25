@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Library extends Component {
+import * as actions from "../../../../actions"
+
+class Library extends Component {
+
+    componentDidMount() {
+        this.props.fetchCourses()
+    }
+
     render() {
         return (
             <div className='library'>
@@ -9,3 +17,5 @@ export default class Library extends Component {
         )
     }
 }
+
+export default connect(null, actions)(Library); // Connect this class to the function called in actions

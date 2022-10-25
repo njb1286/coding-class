@@ -9,12 +9,10 @@ export default class Scheduling extends Component {
             <div className='scheduling'>
                 <Library />
 
-                <div className="library-courses-wrapper">
-                    <div className="library-courses">
-                        <LibraryCourse />
-                        <LibraryCourse />
-                        <LibraryCourse />
-                    </div>
+                <div className="library-courses">
+                    <LibraryCourse />
+                    <LibraryCourse />
+                    <LibraryCourse />
                 </div>
                 <Schedule />
             </div>
