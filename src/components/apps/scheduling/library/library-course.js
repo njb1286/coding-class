@@ -10,7 +10,7 @@ export default class LibraryCourse extends Component {
             <div className='library-course'>
                 <div className="library-course__header">
                     <div className="library-course__title-check">
-                        <label className='library-course__title'>Problem Solving</label>
+                        <label className='library-course__title'>{this.props.title}</label>
                         <FaCheck className='library-course__icon' />
                     </div>
 
@@ -22,7 +22,9 @@ export default class LibraryCourse extends Component {
 
                 <div className="library-course__description">
                     <label>Course Description</label>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium facere recusandae, consequatur temporibus officiis ipsa ad eos atque. Quaerat, officia?</p>
+                    <p>
+                        {this.props.description}
+                    </p>
                 </div>
             </div>
         )
