@@ -7,12 +7,12 @@ export default class Scheduling extends Component {
     render() {
         return (
             <div className='scheduling'>
-                <Library />
 
                 <div className="library-courses">
+                    <Library />
+                    {/* <LibraryCourse />
                     <LibraryCourse />
-                    <LibraryCourse />
-                    <LibraryCourse />
+                    <LibraryCourse /> */}
                 </div>
                 <Schedule />
             </div>
