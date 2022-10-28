@@ -2,11 +2,22 @@
     // grid-column: library-s/library-e;
     grid-column: 1/2;
     grid-row: 1/2;
-
+    
+    padding-left: 100px;
+    padding-top: 100px;
+    margin-right: -50px;
+    
     display: grid;
-    grid-template-rows: [title-s] 100px [title-e courses-s] repeat(3, 1fr) [courses-e];
+    grid-template-rows: [title-s] 150px [title-e courses-s] repeat(3, 1fr) [courses-e];
 
     &__title {
-        grid-row: title-s/title-e;
+        color: $color-blue;
+        font-family: $font-aleg;
+        font-size: 45px;
+        font-weight: bold;
+        border-left: 2px solid $color-blue;
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
     }
 }

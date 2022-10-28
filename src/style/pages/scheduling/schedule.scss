@@ -1,5 +1,18 @@
 .schedule {
-    display: grid;
-    grid-template-rows: 100px repeat(3, 1fr) [progress-s] 200px [progress-e];
-    grid-row-gap: 22px;
+    // display: flex;
+    // flex-direction: column;
+    // display: grid;
+    // grid-template-rows: 100px repeat(auto-fit, 1fr) [progress-s] 200px [progress-e];
+    // grid-row-gap: 22px;
+
+    .schedule-items {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 12fr 1fr;
+    }
+
+    &__title {
+        position: absolute;
+        font-size: 45px;
+    }
 }
