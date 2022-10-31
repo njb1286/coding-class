@@ -17,11 +17,14 @@ class LibraryCourse extends Component {
                         <FaCheck className='library-course__icon' />
                     </div>
 
+
                     <div className="library-course__arrow-action">
                         <Arrow className='library-course__arrow' />
                         <Action onClick={() => this.props.toggleEnrolled(this.props.id)} className="library-course__action" />
                     </div>
                 </div>
+
+                <div className='library-course__line' />
 
                 <div className="library-course__description">
                     <label>Course Description</label>
