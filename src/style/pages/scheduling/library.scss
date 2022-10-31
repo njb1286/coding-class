@@ -6,9 +6,6 @@
     padding-left: 100px;
     padding-top: 100px;
     margin-right: -50px;
-    
-    display: grid;
-    grid-template-rows: [title-s] 150px [title-e courses-s] repeat(3, 1fr) [courses-e];
 
     &__title {
         color: $color-blue;

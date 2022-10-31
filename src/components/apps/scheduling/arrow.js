@@ -12,6 +12,7 @@ export default class Arrow extends Component {
     }
 
     handleToggleArrow() {
+        this.props.handleArrow(!this.state.status);
         this.setState({
             status: !this.state.status
         })
