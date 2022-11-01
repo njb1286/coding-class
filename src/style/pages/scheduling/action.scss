@@ -1,0 +1,45 @@
+.action {
+    background-color: black;
+    font-size: 20px;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    z-index: 3;
+    
+    border-radius: 50%;
+    position: relative;
+    
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        background-color: white;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        transition: .3s ease;
+    }
+
+    &::before {
+        height: 1em;
+        width: .2em;
+    }
+    
+    &::after {
+        height: .2em;
+        width: 1em;
+    }
+}
+
+.action-remove {
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+}
