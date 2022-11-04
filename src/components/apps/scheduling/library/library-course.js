@@ -34,7 +34,7 @@ class LibraryCourse extends Component {
             <div className={`library-course${!this.state.arrow ? " hidden" : ""}`}>
                 <div className="library-course__header">
                     <div className="library-course__title-check">
-                        <label className='library-course__title'>{this.props.title}</label>
+                        <div className='library-course__title'>{this.props.title}</div>
                         <FaCheck className='library-course__icon' />
                     </div>
 

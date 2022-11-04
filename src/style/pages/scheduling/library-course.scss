@@ -14,18 +14,50 @@
             // display: flex;
             // justify-content: space-between;
             display: grid;
-            grid-template-columns: 5fr 1fr; 
+            grid-template-columns: 10fr 1fr; 
+            align-items: center;
         }
 
         
         &__arrow-action {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+
+        &__action {
+            opacity: 0;
+            transition: .3s;
+        }
+
+        &:hover .action {
+            opacity: 1;
+        }
+
+        @keyframes some-animation {
+            0% {
+                translate: 0%;
+            }
+
+            50% {
+                translate: 70%;
+            }
+
+            100% {
+                translate: 0%;
+            }
         }
         
         &__title-check {
             // grid-row: 1/2;
             display: flex;
+
+            animation: some-animation 6s infinite linear;
+        }
+
+        &__icon {
+            margin-left: 40px;
+            font-size: 32px;
         }
     }
 
@@ -40,7 +72,7 @@
 
     .library-course {
         font-size: 25px;
-        padding: 25px;
+        padding: 40px;
 
         &:hover {
             @include solid-course() ;
