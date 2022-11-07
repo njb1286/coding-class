@@ -23,7 +23,9 @@ class Schedule extends Component {
 
         return (
             <div className='schedule'>
-                <h1 className='schedule__title'>My Schedule</h1>
+                <div className="schedule__title-wrapper">
+                    <h1 className='schedule__title'>My Schedule</h1>
+                </div>
                 <Gradient />
                 <div className="schedule-items">
 

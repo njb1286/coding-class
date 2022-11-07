@@ -1,3 +1,32 @@
+.schedule-courses-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .schedule-course {
-    
+    height: 50%;
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.2);
+    justify-self: center;
+
+    color: $color-subtle-black;
+    font-family: $font-lato;
+    font-size: 20px;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: [title-s] 1fr [action-s] 48px [action-e space-s] 16px [space-e title-e];
+    grid-template-rows: 1fr;
+    align-items: center;
+
+    &__title {
+        grid-column: title-s/title-e;
+        grid-row: 1/2;
+    }
+
+    &__action {
+        grid-column: action-s/action-e;
+        grid-row: 1/2;
+    }
 }

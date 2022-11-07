@@ -74,3 +74,5 @@ export function fetchCourses() {
         ]
     }
 }
+
+document.documentElement.style.setProperty('--library-grid-count', fetchCourses().payload.length);
