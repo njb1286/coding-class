@@ -2,7 +2,9 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 76px;
-    background-color: rgba(255, 255, 255, 0.3);
+
+    align-self: end;
+    align-items: center;
 
     &__title {
         grid-column: 1/2;
@@ -10,5 +12,18 @@
 
     &__percent {
         grid-column: 2/3;
+    }
+}
+
+.progress-tracker {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 130px;
+    font-family: $font-aleg;
+    font-size: 16px;
+    color: white;
+    
+    &__title {
+        @include border-left();
+        margin-left: 33px;
     }
 }

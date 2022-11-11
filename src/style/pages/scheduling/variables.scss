@@ -8,3 +8,10 @@ $color-subtle-black: #333;
 $font-aleg: 'Alegreya', serif;
 $font-lato: 'Lato', sans-serif;
 $font-mont: 'Montserrat', sans-serif;
+
+@mixin border-left {
+    border-left: 2px solid $color-subtle-gray;
+    padding-left: 30px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
