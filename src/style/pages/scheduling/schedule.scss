@@ -12,6 +12,7 @@
         color: white;
         font-family: $font-aleg;
         display: flex;
+        font-weight: lighter;
         @include border-left();
     }
 

@@ -67,7 +67,7 @@ export function fetchCourses() {
             },
             {   
                 id: 9,
-                title: "UX for Developers",
+                title: "UX for Developers UX for Developers UX for Developers UX for Developers UX for Developers",
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid natus molestias unde aliquam suscipit et.",
                 enrolled: false
             },
