@@ -5,10 +5,12 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    // &::-webkit-scrollbar {
-    //     z-index: -1;
-    //     width: 0;
-    // }
+    padding-bottom: 90px;
+
+    &::-webkit-scrollbar {
+        z-index: -1;
+        width: 0;
+    }
     
     .library-course {
         margin-bottom: 30px;

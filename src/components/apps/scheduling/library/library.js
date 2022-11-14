@@ -5,6 +5,11 @@ import LibraryCourse from './library-course';
 import * as actions from "../../../../actions"
 
 class Library extends Component {
+    constructor() {
+        super();
+
+        
+    }
 
     componentDidMount() {
         this.props.fetchCourses()

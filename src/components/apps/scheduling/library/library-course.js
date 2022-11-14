@@ -35,12 +35,14 @@ class LibraryCourse extends Component {
                 <div className="library-course__header">
                     <div className="library-course__title-check">
                         <div className='library-course__title'>{this.props.title}</div>
-                        <FaCheck className='library-course__icon' />
+                        {
+                            this.props.enrolled ? <FaCheck className='library-course__icon' /> : null
+                        }
                     </div>
 
                     <div className="library-course__arrow-action">
                         <Arrow handleArrow={this.handleArrow} className='library-course__arrow' />
-                        <Action onClick={() => this.props.toggleEnrolled(this.props.id)} className="library-course__action" />
+                        <Action onClick={() => this.props.toggleEnrolled(this.props.id)} className={`library-course__action${this.props.enrolled ? " action-remove" : ""}`} />
                     </div>
                 </div>
 
@@ -58,20 +60,6 @@ class LibraryCourse extends Component {
                         </div>
                     </div>
                 </AnimateHeight>
-
-                {/* {
-                    this.state.arrow ? (
-                        <div className="desc-line">
-                            <div className='library-course__line' />
-                            <div className="library-course__description">
-                                <label>Course Description</label>
-                                <p>
-                                    {this.props.description}
-                                </p>
-                            </div>
-                        </div>
-                    ) : null
-                } */}
             </div>
         )
     }

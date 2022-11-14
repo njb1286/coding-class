@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Gradient from '../gradient';
 import ProgressTracker from './progress-tracker';
 import ScheduleCourse from "./schedule-course";
-import LibraryCourse from "../library/library-course";
 
 class Schedule extends Component {
     renderCourses() {
@@ -35,7 +34,6 @@ class Schedule extends Component {
 
                     <ProgressTracker amountPossible={5} amountEnrolled={this.amountEnrolled} />
                 </div>
-                {/* <Library /> */}
             </div>
         )
     }

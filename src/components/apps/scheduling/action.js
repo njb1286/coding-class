@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { FaPlusCircle, FaTimesCircle } from 'react-icons/fa';
-
 export default class Action extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +15,7 @@ export default class Action extends Component {
         this.props.onClick();
 
         this.setState({
-            active: !this.state.active
+            active: this.props.active
         })
     }
 
@@ -25,7 +23,7 @@ export default class Action extends Component {
         return (
             <a 
                 onClick={this.handleAction} 
-                className={`${this.props.className} action${this.state.active ? " action-remove" : ""}`}
+                className={`${this.props.className} action`}
             />
         )
     }
