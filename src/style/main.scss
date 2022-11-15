@@ -30,3 +30,19 @@ body:has(.birthday-countdown) {
 body:has(.scheduling) {
     @import "./pages/scheduling/main.scss";
 }
+
+body:has(.prop-management) {
+    html {
+        font-size: 62.5%;
+    }
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+
+    @import "./pages/prop-management/main.scss";
+}

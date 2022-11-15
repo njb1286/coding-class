@@ -5,6 +5,7 @@ import PropsStateThis from './apps/props_state_this/main';
 import BirthdayCountdown from './apps/birthday-countdown/main';
 import ComponentLifecycle from './apps/component-lifecycle/main';
 import Scheduling from './apps/scheduling/main';
+import PropManagement from './apps/prop-management/main';
 // import TypeScript from './apps/typescript/main.ts';
 
 import {
@@ -53,6 +54,12 @@ export default class App extends Component {
           name: "Scheduling",
           path: "scheduling",
           component: <Scheduling />
+        },
+
+        {
+          name: "Property Management",
+          path: "prop-management",
+          component: <PropManagement />
         }
       ]
     }
