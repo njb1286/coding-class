@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Signin from './auth/signin';
 import Signup from './auth/signup';
-import HeaderWrapper from './header-wrapper';
+import Layout from './layout';
 
 export default class PropManagement extends Component {
     render() {
@@ -12,10 +12,11 @@ export default class PropManagement extends Component {
                 <BrowserRouter>
                     <Switch>
 
-                        <HeaderWrapper>
-                            <Route path="/prop-management/signup" render={() => <Signup />} />
+                        <Layout>
                             <Route exact path="/prop-management/" render={() => <Signin />} />
-                        </HeaderWrapper>
+                            <Route path="/prop-management/signup" render={() => <Signup />} />
+                            <Route path="/prop-management/siginin" render={() => <Signup />} />
+                        </Layout>
 
                     </Switch>
                 </BrowserRouter>
