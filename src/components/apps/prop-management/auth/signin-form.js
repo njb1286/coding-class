@@ -1,38 +1,11 @@
 import React, { Component } from 'react';
-import { reduxForm, Field, reducer } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import FormTitle from '../form-title';
-import { FormInput, FormButton } from '../form-field';
+import { FormInput } from '../form-field';
 import { combineReducers } from 'redux';
 // import Field from '../field';
 
 class SigninForm extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            email: "",
-            password: ""
-        }
-
-        this.setEmail = this.setEmail.bind(this);
-        this.setPassword = this.setPassword.bind(this);
-    }
-
-    setEmail(email) {
-        this.setState({ 
-            email: email.target.value 
-        })
-
-        console.log("Email", email.target.value);
-    }
-
-    setPassword(password) {
-        this.setState({ 
-            password: password.target.value  
-        })
-    }
-
-
     render() {
         return (
             <form className='sign-in-form'>
@@ -53,14 +26,6 @@ class SigninForm extends Component {
                     type='password' 
                     title="Password"
                     component={FormInput} 
-                />
-
-                <Field 
-                    className='sign-in-form__button' 
-                    name='login' 
-                    type='submit' 
-                    title="Login"
-                    component={FormButton} 
                 />
             </form>
         )
