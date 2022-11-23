@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field, reducer } from 'redux-form';
 import FormTitle from '../form-title';
-import { FormInput } from '../form-field';
+import { FormInput, FormButton } from '../form-field';
 import { combineReducers } from 'redux';
 // import Field from '../field';
 
@@ -53,6 +53,14 @@ class SigninForm extends Component {
                     type='password' 
                     title="Password"
                     component={FormInput} 
+                />
+
+                <Field 
+                    className='sign-in-form__button' 
+                    name='login' 
+                    type='submit' 
+                    title="Login"
+                    component={FormButton} 
                 />
             </form>
         )
