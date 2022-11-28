@@ -1,0 +1,43 @@
+.form-input {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  &__title {
+    grid-row: 1/-1;
+    grid-column: 1/2;  
+  }
+  &__input {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+  }
+}
+
+
+.form-input {
+  align-items: center;
+
+  &__title {
+    color: $color-red-BA;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.3rem;
+
+    display: grid;
+    grid-template-columns: 1fr 200px;
+
+    &__text {
+      grid-column: 2/3;
+    }
+  }
+
+    &__input {
+      height: 4rem;
+      width: 50rem;
+      border: 1px solid $color-gray-E6;
+      border-radius: .5rem;
+      padding-left: 2rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+  }
+}

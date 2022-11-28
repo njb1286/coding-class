@@ -1,15 +1,32 @@
-import e from 'express';
 import React, { Component } from 'react';
 
 export class FormInput extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            formData: ""
+        }
+
+        this.handleFormData = this.handleFormData.bind(this);
+    }
+
+    handleFormData(e) {
+        this.setState({
+            formData: e.target.value
+        })
+    }
+
     render() {
-        const { className, title } = this.props;
+        const { className, title, placeholder, type, input } = this.props;
 
         return (
-            <div className='form-input'>
-                <label className='form-input__title'>{title}</label>
+            <div className={`${className} form-input`}>
+                <label className='form-input__title'>
+                    <div className="form-input__title__text">{title}</div>
+                </label>
                 <input 
-                    className={`${className} form-input__input`} 
+                    className='form-input__input' 
                     type={type}
                     {...input}
                     placeholder={placeholder}

@@ -1,4 +1,11 @@
 .sign-in {
     grid-row: content-s/content-e;
     grid-column: content-s/content-e;
+
+    &-form {
+        &__title {
+            border-bottom: 2px solid $color-gray-D8;
+            width: 100%;
+        }
+    }
 }

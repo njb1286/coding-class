@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import FormTitle from '../form-title';
 import { FormInput } from '../form-field';
-import { combineReducers } from 'redux';
 // import Field from '../field';
 
 class SigninForm extends Component {
     render() {
         return (
             <form className='sign-in-form'>
-                <FormTitle className="sign-in-form__title" text="login" />
+                <FormTitle className="sign-in-form__title" text="Login" />
                 <Field 
                     placeholder='Enter Email' 
                     className='sign-in-form__email' 
