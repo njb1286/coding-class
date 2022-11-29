@@ -39,10 +39,6 @@ export class FormInput extends Component {
 }
 
 export class FormButton extends Component {
-    // handleClick(action) {
-    //     action.preventDefault();
-    // }
-
     render() {
         const { 
             className, 
@@ -57,7 +53,6 @@ export class FormButton extends Component {
                     className='form-button__button'
                     type={type}
                     {...input}
-                    // onClick={this.handleClick}
                 >
                     {title}
                 </button>
