@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 export class FormInput extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             formData: ""
@@ -15,6 +15,8 @@ export class FormInput extends Component {
         this.setState({
             formData: e.target.value
         })
+
+        this.props.onChange ? this.props.onChange(e) : null;
     }
 
     render() {
@@ -39,6 +41,16 @@ export class FormInput extends Component {
 }
 
 export class FormButton extends Component {
+    constructor() {
+        super();
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.onClick(this.props.properties);
+    }
+
     render() {
         const { 
             className, 
@@ -52,6 +64,7 @@ export class FormButton extends Component {
                 <button 
                     className='form-button__button'
                     type={type}
+                    onClick={this.handleClick}
                     {...input}
                 >
                     {title}
