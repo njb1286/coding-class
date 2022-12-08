@@ -23,8 +23,6 @@ class SignupForm extends Component {
         this.setState({
             [type]: text
         })
-
-        console.log(text);
     }
 
     handleSubmit = props => {
@@ -33,7 +31,7 @@ class SignupForm extends Component {
 
     render() {
 
-        const { onSubmit } = this.props;
+        const { handleSubmit } = this.props;
         // const onSubmit = this.props.onSubmit;
 
         return (

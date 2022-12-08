@@ -1,5 +1,11 @@
 import { FETCH_COURSES, TOGGLE_ENROLLED } from "./types";
 
+import { signUp } from "./auth";
+
+export {
+    signUp
+};
+
 export function toggleEnrolled(id) {
     return {
         type: TOGGLE_ENROLLED,
