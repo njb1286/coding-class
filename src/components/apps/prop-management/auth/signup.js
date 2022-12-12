@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SignupForm from './signup-form';
 
-export default class Signup extends Component {
+import * as actions from "../../../../actions";
+
+class Signup extends Component {
     onSubmit = fields => {
-        
+        this.props.signUp(fields, () => {
+            console.log("Navigate to dashboard");
+            this.props.history.push('/prop-management/dashboard');
+        })
     }
 
     render() {
@@ -14,3 +20,5 @@ export default class Signup extends Component {
         )
     }
 }
+
+export default connect(null, actions)(Signup);

@@ -6,7 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./components/app";
 import reducers from "./reducers";
 
-const createStoreWithMiddleware = applyMiddleware()(compose(window.devToolsExtension ? FaWindows.devToolsExtension() : f => f)(createStore));
+import reduxThunk from "redux-thunk";
+
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose(window.devToolsExtension ? FaWindows.devToolsExtension() : f => f)(createStore));
 
 import "./style/main.scss";
 import { FaWindows } from "react-icons/fa";

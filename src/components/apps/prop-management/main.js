@@ -13,9 +13,9 @@ export default class PropManagement extends Component {
                     <Switch>
 
                         <Layout>
-                            <Route exact path="/prop-management/" render={() => <Signin />} />
-                            <Route path="/prop-management/signup" render={() => <Signup />} />
-                            <Route path="/prop-management/signin" render={() => <Signin />} />
+                            <Route exact path="/prop-management/" component={Signin} />
+                            <Route path="/prop-management/signup" component={Signup} />
+                            <Route path="/prop-management/signin" component={Signin} />
                         </Layout>
 
                     </Switch>
